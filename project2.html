@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 1 | Razan Alzouabi Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html" class="logo-link">Razan Alzouabi</a>
+    </div>
+    
+    <nav class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#top">Back to Top</a></li>
+        <li class="dropdown">
+          <button onclick="toggleMenu()" class="dropdown-toggle">Projects ▾</button>
+          <ul class="dropdown-menu" id="projectDropdown">
+            <li><a href="project1.html">Gateway Station</a></li>
+            <li><a href="project3.html">Lavuu Pavilion</a></li>
+            <li><a href="project4.html">Occursus</a></li>
+            <li><a href="project5.html">Capsule</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="project-detail">
+    <div class="project-detail-container">
+      <h1>House Revolution</h1>
+      <img src="assets/house/cover1.jpg" alt="Project 1 Image" />
+      <p>This project explores the dynamic relationship between program and form, using experimental
+        drawings to express space and reimagine the Out\House, redefining its architecture through functional needs and rituals.</p>
+        <div class="masonry-grid">
+        <div class="masonry-item">
+          <img src="assets/house/image1.jpg" alt="Concept Sketch">
+          
+        </div>
+        <div class="masonry-item">
+          <img src="assets/house/image2.jpg" alt="Exterior View">
+          
+        </div>
+        <div class="masonry-item">
+          <img src="assets/house/image3.jpg" alt="Interior Space">
+          
+        </div>
+      </div>
+      <div class="project-detail-container">
+        
+      <img src="assets/house/cover2.jpg" alt="Project 1 Image" />
+      
+        <div class="masonry-grid">
+            <div class="masonry-item">
+              <img src="assets/house/image4.jpg" alt="Concept Sketch">
+              
+            </div>
+            <div class="masonry-item">
+              <img src="assets/house/image5.jpg" alt="Exterior View">
+              
+            </div>
+            <div class="masonry-item">
+              <img src="assets/house/image6.jpg" alt="Site Plan">
+              
+           </div>
+           <div class="masonry-item">
+            <img src="assets/house/image7.jpg" alt="Site Plan">
+            
+         </div>
+          </div>
+          <div class="project-detail-container">
+            
+          <img src="assets/house/cover3.jpg" alt="Project 1 Image" />
+          
+            <div class="masonry-grid">
+              <div class="masonry-item">
+                <img src="assets/house/image10.jpg" alt="Concept Sketch">
+                
+              </div>
+              <div class="masonry-item">
+                <img src="assets/house/image8.jpg" alt="Exterior View">
+                
+              </div>
+              <div class="masonry-item">
+                <img src="assets/house/image9.jpg" alt="Interior Space">
+                
+              </div>
+            </div>
+    </div>
+  </section>
+  <!-- Lightbox Zoom Script -->
+<script>
+    document.querySelectorAll(".masonry-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        const overlay = document.createElement("div");
+        overlay.style = `
+          position: fixed;
+          top: 0; left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0,0,0,0.9);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        `;
+  
+        const zoomedImg = document.createElement("img");
+        zoomedImg.src = img.src;
+        zoomedImg.style = `
+          max-width: 90%;
+          max-height: 90%;
+          border-radius: 8px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        `;
+  
+        overlay.appendChild(zoomedImg);
+        document.body.appendChild(overlay);
+  
+        overlay.addEventListener("click", () => overlay.remove());
+      });
+    });
+  </script>
+  <script>
+    function toggleMenu() {
+      const dropdown = document.getElementById('projectDropdown');
+      dropdown.classList.toggle('show');
+    }
+  
+    // Optional: Close menu when clicking outside
+    window.addEventListener('click', function (e) {
+      const toggle = document.querySelector('.dropdown-toggle');
+      const menu = document.getElementById('projectDropdown');
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
